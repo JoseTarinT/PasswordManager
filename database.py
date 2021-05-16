@@ -9,8 +9,8 @@ INSERT_DATA = "INSERT INTO passwords (app, user, password) VALUES (?, ?, ?);"
 GET_ALL_DATA = "SELECT * FROM passwords;"
 GET_BY_APP = "SELECT * FROM passwords WHERE app = ?;"
 GET_BY_USER = "SELECT * FROM passwords WHERE user = ?;"
-GET_BY_PASSWORD = "SELECT * FROM passwords WHERE password = ?;"
 DELETE_ROW = "DELETE FROM passwords WHERE app = ?"
+UPDATE_COLUMN = "UPDATE passwords SET app = ?, user = ?, password = ? WHERE app = ?"
 
 # Create the functions
 
@@ -46,4 +46,9 @@ def get_by_user(connection, user):
 def delete_info(connection, app):
     with connection:
         return connection.execute(DELETE_ROW, (app,))  
+
+# Update app name, user or/and password
+def modify_column(connection, app, user, password, appp):
+    with connection:
+        return connection.execute(UPDATE_COLUMN, (app, user, password, appp))
                     
