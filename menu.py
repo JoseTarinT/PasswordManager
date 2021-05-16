@@ -1,4 +1,5 @@
 import database
+import PasswordGenerator
 
 menu_prompt = '''--Password Manager--
 
@@ -28,7 +29,6 @@ def menu():
             Your choice is: ''')
             if pw_choice == "1":
                 password = input("Type your password: ")
-                # print("Yor password is: ", password)
             elif pw_choice == "2":
                 PasswordGenerator.pw_lenght()
                 psswrd = input('''If you want to try a new password type "1".
@@ -39,9 +39,7 @@ You can still write your own password or if you like the password, you can copy 
                     continue
             else:
                 print("Sorry, invalid input")
-            # password = password
-            # info = [app, user, password]
-            # print(info)
+
             database.add_data(connection, app, user, password)
 
         elif user_input == "2":
