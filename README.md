@@ -12,12 +12,13 @@ MENU:
 #1 Introduce a Master Password
 
 #2 Add New Entry 
+
     -App or Website
     -User name
     -Password
         -Create secure password --> Password Generator
 
-#3 Show All Passwords and User names --> def get_all_data(connection):
+#3 Show All Passwords and User names
 
 #4 Show by:
     -By Web or App 
